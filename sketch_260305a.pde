@@ -4,8 +4,11 @@ void setup(){
 
 void draw(){
   background(0);
+  
   EARTH();
-  UFO();
+  
+  UFO(200, 240, 1);
+  
 
 }
 
@@ -27,10 +30,23 @@ void EARTH(){
   ellipse(780, 360, 134, 70);
   
   }
-  void UFO(){
+void UFO(int x, int y, float s){
+  pushMatrix();
+  translate(x,y);
+  scale(s);
+  stroke(0);
+  fill(167, 232, 255);
+  ellipse(0, 0, 120, 100);
   fill(255);
-  ellipse(200, 360, 190, 60);
+  ellipse(0, 20, 190, 60);
   fill(132, 87, 160);
-  ellipse(200, 365, 186, 52);
+  ellipse(0, 24, 186, 53);
+  ellipse(0, 29, 160, 40);
+  ellipse(0, 36, 120, 25);
+  fill(211, 121, 64);
+  ellipse(0, 45, 60, 10);
+  fill(255,0,0);
+  circle(0,0,10);
+  popMatrix();
   
-  }
+}
