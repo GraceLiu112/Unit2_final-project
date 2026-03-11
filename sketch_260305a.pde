@@ -1,5 +1,9 @@
+int x;
+float w;
 void setup(){
   size(1000, 500);
+  x = -100;
+  w = 1;
 }
 
 void draw(){
@@ -7,9 +11,16 @@ void draw(){
   
   EARTH();
   
-  UFO(200, 240, 1);
+  UFO(x, 240, w);
+  x = x + 3;
+  if(x>700){
+  x = -100;
+  }
+  w = w - 0.1;
+  if(w = 0){
+  w = 1;
+  }
   
-
 }
 
 void EARTH(){
