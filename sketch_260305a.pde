@@ -16,8 +16,9 @@ void draw(){
   if(x>700){
   x = -100;
   }
-  w = w - 0.1;
-  if(w = 0){
+  w = w - 0.003
+  ;
+  if(w == 0){
   w = 1;
   }
   
@@ -47,7 +48,7 @@ void UFO(int x, int y, float s){
   scale(s);
   stroke(0);
   fill(167, 232, 255);
-  ellipse(0, 0, 120, 100);
+  ellipse(0, 0, 120, 100); 
   fill(255);
   ellipse(0, 20, 190, 60);
   fill(132, 87, 160);
