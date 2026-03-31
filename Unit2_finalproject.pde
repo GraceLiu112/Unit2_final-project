@@ -145,7 +145,9 @@ void EARTH(){
   ellipse(780, 360, 134, 70);
   
   }
-void UFO(int x, int y, float s){
+  
+  void UFO(int x, int y, float s){
+    
   pushMatrix();
   translate(x,y);
   scale(s);
@@ -165,7 +167,9 @@ void UFO(int x, int y, float s){
   popMatrix();
   
 }
+
 void STAR(int x, int y){ 
+  
   pushMatrix();
   translate(x, y);
   fill(255, 243, 108);
@@ -178,7 +182,9 @@ void STAR(int x, int y){
   popMatrix();
   
 }
+
 void METEORITE(int x, int y){
+  
   pushMatrix();
   translate(x, y);
   noStroke();
@@ -197,6 +203,5 @@ void METEORITE(int x, int y){
   ellipse(0, 0, 10, 12);
   popMatrix();
   popMatrix();
-
 
 }
