@@ -1,9 +1,27 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+Minim minim;
+AudioPlayer song;
+
+// declare variables
 int x;
 int x1;
 int y1;
 int vy;
+int x2;
+int y2;
+int vy2;
+int x3;
+int y3;
+int vy3;
 float w;
 int counter;
+
 void setup(){
   size(1000, 500);
   x = -100;
@@ -11,7 +29,17 @@ void setup(){
   counter = 0;
   x1 = 300;
   y1 = 170;
-  vy = 5;
+  vy = 4;
+  x2 = 200;
+  y2 = 600;
+  vy2 = 3;
+  x3 = 600;
+  y3 = 600;
+  vy3 = 4;
+  
+  minim = new Minim(this);
+  song = minim.loadFile("Unit2project_song.mp3");
+  song.play();
 }
 
 void draw(){
@@ -26,9 +54,6 @@ void draw(){
   w = 1;
   }
   w = w - 0.003;
-  //if(w < 0){
-  //  w = 1;
-  //}
   counter += 1;
   
   //1st star
@@ -70,15 +95,35 @@ void draw(){
     counter = 0;
   }
   
+  // 1st meteotrite
   METEORITE(x1, y1);
   y1 = y1 + vy;
   if(y1 > 169){
-    vy = -5;
+    vy = -4;
   }
-  if(y1 == -70){
-    vy = 5;
+  if(y1 < -70){
+    vy = 4;
   }
   
+  // 2nd meteotrite
+  METEORITE(x2, y2);
+  y2 = y2 + vy2;
+  if(y2 > 599){
+    vy2 = -3;
+  }
+  if(y2 < 320){
+    vy2 = 3;
+  }
+  
+  // 3rd meteotrite
+  METEORITE(x3, y3);
+  y3 = y3 + vy3;
+  if(y3 > 599){
+    vy3 = -4;
+  }
+  if(y3 < 300){
+    vy3 = 4;
+  }
   
 }
 
