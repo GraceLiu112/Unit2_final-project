@@ -162,8 +162,6 @@ void EARTH(){
   ellipse(0, 36, 120, 25);
   fill(211, 121, 64);
   ellipse(0, 45, 60, 10);
-  //fill(255,0,0);
-  //circle(0,0,10);
   popMatrix();
   
 }
